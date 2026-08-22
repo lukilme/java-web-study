@@ -6,7 +6,7 @@ services:
     ports:
       - "8085:8080"
     volumes:
-      - ./target:/usr/local/tomcat/webapps
+      - ./servlet-app/target:/usr/local/tomcat/webapps
     restart: unless-stopped
 
   liferay:
@@ -14,4 +14,6 @@ services:
     container_name: java-liferay
     ports:
       - "8086:8080"
+    volumes:
+      - ./portlet-app/target:/opt/liferay/deploy
     restart: unless-stopped
