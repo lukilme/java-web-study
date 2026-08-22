@@ -1,0 +1,17 @@
+services:
+
+  tomcat:
+    image: tomcat:9.0-jdk21-temurin
+    container_name: java-tomcat
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./target:/usr/local/tomcat/webapps
+    restart: unless-stopped
+
+  liferay:
+    image: liferay/portal:7.4.3.112-ga112
+    container_name: java-liferay
+    ports:
+      - "8086:8080"
+    restart: unless-stopped
