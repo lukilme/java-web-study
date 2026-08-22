@@ -1,15 +1,33 @@
 package com.example.servlet;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("=== Teste Local do Módulo Servlet ===");
-        
-        // Espaço para testar regras de negócio, utilitários ou conexões
-        String mensagem = formatarMensagem("Dev");
-        System.out.println(mensagem);
-    }
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-    private static String formatarMensagem(String nome) {
-        return "Ambiente configurado com sucesso para: " + nome;
+@WebServlet("/api/*")
+public class Main extends HttpServlet {
+
+    @Override
+    protected void doGet(
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) throws IOException {
+
+        response.setContentType("text/plain");
+
+        String path = request.getPathInfo();
+
+        if (path == null || path.equals("/")) {
+            response.getWriter().write("Página principal");
+        } 
+        else if (path.equals("/hello")) {
+            response.getWriter().write("Hello!");
+        } 
+        else if (path.equals("/status")) {
+            response.getWriter().write("Servidor funcionando!");
+        }
     }
 }
