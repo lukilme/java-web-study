@@ -1,1 +1,12 @@
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/AuthResourceServlet.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/FriendlyUrlServlet.java
 /home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/Main.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/controller/AuthApiServlet.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/controller/UserController.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/db/Database.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/init/AppInitializer.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/model/Role.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/model/User.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/repo/UserRepository.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/service/UserService.java
+/home/kilmer/Dev/java-web-study/servlet-app/src/main/java/com/example/servlet/util/PasswordUtil.java

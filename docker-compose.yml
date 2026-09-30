@@ -2,6 +2,8 @@ services:
   tomcat:
     image: tomcat:9.0-jdk21-temurin
     container_name: java-tomcat
+    depends_on:
+      - db
     ports:
       - "8085:8080"
     volumes:
@@ -13,5 +15,20 @@ services:
     ports:
       - "8086:8080"
     volumes:
-      - ./portlet-app/target:/opt/liferay/deploy
+      - ./portlet-app/target/portlet-app-1.0.0.jar:/opt/liferay/deploy/portlet-app.jar
     restart: unless-stopped
+
+  db:
+    image: postgres:15-alpine
+    container_name: java-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,5 +1,7 @@
 package com.example.servlet;
 
+import com.example.servlet.db.Database;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +30,15 @@ public class Main extends HttpServlet {
         } 
         else if (path.equals("/status")) {
             response.getWriter().write("Servidor funcionando!");
+        } 
+        else if (path.equals("/db")) {
+            try {
+                String version = Database.getVersion();
+                response.getWriter().write("Postgres: " + version);
+            } catch (Exception e) {
+                response.setStatus(500);
+                response.getWriter().write("DB error: " + e.getMessage());
+            }
         }
     }
 }

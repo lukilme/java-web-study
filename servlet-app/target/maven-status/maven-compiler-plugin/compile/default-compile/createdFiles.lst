@@ -1,1 +1,12 @@
+com/example/servlet/init/AppInitializer.class
+com/example/servlet/repo/UserRepository.class
 com/example/servlet/Main.class
+com/example/servlet/controller/AuthApiServlet.class
+com/example/servlet/service/UserService.class
+com/example/servlet/controller/UserController.class
+com/example/servlet/util/PasswordUtil.class
+com/example/servlet/model/Role.class
+com/example/servlet/model/User.class
+com/example/servlet/db/Database.class
+com/example/servlet/AuthResourceServlet.class
+com/example/servlet/FriendlyUrlServlet.class
