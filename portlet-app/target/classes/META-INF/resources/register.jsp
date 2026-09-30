@@ -40,14 +40,14 @@
           form.append('role', 'USER');
           const res = await fetch('http://localhost:8085/api/users', { method: 'POST', body: form });
           if (res.status === 201) {
-            window.location.href = '/login.jsp';
+            window.location.href = '/o/portlet-app/login.jsp';
           } else {
             alert('Erro ao criar conta');
           }
         });
       </script>
       </form>
-      <p class="text-sm text-gray-600 mt-4">Já tem conta? <a href="/login.jsp" class="text-indigo-600 hover:underline">Entrar</a></p>
+      <p class="text-sm text-gray-600 mt-4">Já tem conta? <a href="/o/portlet-app/login.jsp" class="text-indigo-600 hover:underline">Entrar</a></p>
     </div>
   </body>
 </html>

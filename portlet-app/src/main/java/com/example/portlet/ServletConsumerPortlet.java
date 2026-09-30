@@ -19,12 +19,16 @@ import java.net.URI;
 import java.net.URL;
 
 @Component(
-        service = Portlet.class,
-        property = {
-                "javax.portlet.name=example_consumer",
-                "javax.portlet.display-name=Servlet Consumer",
-                "javax.portlet.security-role-ref=power-user,user"
-        }
+    immediate = true,
+    property = {
+        "com.liferay.portlet.display-category=category.sample",
+        "com.liferay.portlet.instanceable=false",
+        "javax.portlet.display-name=Auth View",
+        "javax.portlet.name=servlet_consumer_portlet",
+        "javax.portlet.version=3.0",
+        "javax.portlet.security-role-ref=power-user,user"
+    },
+    service = Portlet.class
 )
 public class ServletConsumerPortlet extends GenericPortlet {
 
@@ -53,6 +57,10 @@ public class ServletConsumerPortlet extends GenericPortlet {
 
         request.setAttribute("servletResponse", result);
         PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/view.jsp");
+        if (dispatcher == null) {
+            response.getWriter().write("JSP not found: /view.jsp");
+            return;
+        }
         dispatcher.include(request, response);
     }
 }

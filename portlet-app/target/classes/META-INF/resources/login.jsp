@@ -47,7 +47,7 @@
                     }
                 });
             </script>
-            <p class="text-sm text-gray-600 mt-4">Não tem conta? <a href="/register.jsp" class="text-indigo-600 hover:underline">Registre-se</a></p>
+            <p class="text-sm text-gray-600 mt-4">Não tem conta? <a href="/o/portlet-app/register.jsp" class="text-indigo-600 hover:underline">Registre-se</a></p>
         </div>
     </body>
 </html>

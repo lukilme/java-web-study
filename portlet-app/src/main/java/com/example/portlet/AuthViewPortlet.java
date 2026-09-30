@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.portlet.GenericPortlet;
 import javax.portlet.Portlet;
+import javax.portlet.PortletException;
+import javax.portlet.PortletRequestDispatcher;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
@@ -22,14 +24,15 @@ import javax.portlet.RenderResponse;
     },
     service = Portlet.class
 )
-public class AuthViewPortlet extends GenericPortlet{
+public class AuthViewPortlet extends GenericPortlet {
     @Override
-    protected void doView(
-            RenderRequest request,
-            RenderResponse response)
-            throws IOException {
+    protected void doView(RenderRequest request, RenderResponse response) throws IOException, PortletException {
+        PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/login.jsp");
+        if (dispatcher == null) {
+            response.getWriter().write("JSP not found: /login.jsp");
+            return;
+        }
 
-        response.getWriter().write("PORTLET OK");
+        dispatcher.include(request, response);
     }
-
 }
