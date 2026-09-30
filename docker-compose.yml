@@ -15,7 +15,7 @@ services:
     ports:
       - "8086:8080"
     volumes:
-      - ./portlet-app/target/portlet-app-1.0.0.jar:/opt/liferay/deploy/portlet-app.jar
+      - ./portlet-app/target/portlet-app-1.0-SNAPSHOT.jar:/opt/liferay/osgi/modules/portlet-app.jar
     restart: unless-stopped
 
   db:
