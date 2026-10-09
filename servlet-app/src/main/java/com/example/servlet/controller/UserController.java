@@ -44,11 +44,11 @@ public class UserController extends HttpServlet {
         }
         try {
             Role role = Role.valueOf(roleStr.toUpperCase());
-            User created = userService.createUser(null, name, email, password.toCharArray(), role);
+            User created = userService.createUser(name, email, password.toCharArray(), role);
             resp.setStatus(201);
             resp.getWriter().write("created:" + created.getId());
         } catch (IllegalArgumentException e) {
-            resp.sendError(400, "invalid role");
+            resp.sendError(400, e.getMessage() == null ? "invalid user data" : e.getMessage());
         } catch (Exception e) {
             throw new ServletException(e);
         }
