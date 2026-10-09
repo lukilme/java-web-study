@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1791507010235
-Build-Jdk: 25.0.2
+Bnd-LastModified: 1791508280548
+Build-Jdk: 21.0.12.1
 Built-By: kilmer
 Bundle-ManifestVersion: 2
 Bundle-Name: portlet-app
